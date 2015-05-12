@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>User Registration</title>
+    <script src="/js/validation.js"></script>
+    <script type="text/javascript">
+      function validate() {
+    	  if (!allnumeric()) {
+    		  return false;
+    	  }
+    	  
+    	  if (!ValidateEmail()) {
+    		  return false;
+    	  }
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>User Registration:</h1>
+	<form method="get" action="register" onsubmit="return validate();">
+    <table>
+      <tr></tr>
+      <tr></tr>
+      <tr>
+        <td colspan="2" style="font-weight:bold;">Name:</td>  
+        <td><input type="text" name="txtName" id="txtName" required="required" ></td>        
+      </tr>
+      <tr>
+        <td colspan="2" style="font-weight:bold;">Phone No.:</td>  
+        <td><input type="text" name="txtPhoneNo" id="txtPhoneNo" required="required" onchange="allnumeric(this)" ></td>        
+      </tr>
+      
+      <tr>
+        <td colspan="2" style="font-weight:bold;">Email:</td>  
+        <td><input type="text" name="txtEmail" id="txtEmail" required="required" onchange="ValidateEmail(this)" ></td>        
+      </tr>
+      
+      <tr>
+        <td colspan="2" style="font-weight:bold;">Address:</td>  
+        <td><input type="text" name="txtAddress" id="txtAddress"  required="required" ></td>        
+      </tr>
+      
+      <tr>
+        <td><input type="submit" value="Register"/></td>
+      </tr>
+      <tr></tr>
+      <tr></tr>
+    </table>
+  </form>
+  </body>
+</html>
